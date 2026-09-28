@@ -1,4 +1,4 @@
-def call(String credid, String Project, String ImageTag, String dockerhubuser){
+def call(String Project, String ImageTag, String dockerhubuser){
   withCredentials([usernamePassword(credentialsId: 'dockercred', passwordVariable: 'dockerHubPass', usernameVariable: 'dockerHubUser')]) {
       sh "docker login -u ${dockerhubuser} -p ${dockerhubpass}"
   }
